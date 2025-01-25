@@ -18,7 +18,7 @@ if "%~2"=="" set "outputFolder=%~1"
 if not exist "%outputFolder%" mkdir "%outputFolder%"
 
 :: Convert all .wav and .flac files to .mp3
-for %%a in ("%inputFolder%\*.wav" "%inputFolder%\*.flac") do (
+for %%a in ("%inputFolder%\*.wav" "%inputFolder%\*.flac" "%inputFolder%\*.m4a" "%inputFolder%\*.mp4") do (
     ffmpeg -i "%%a" -q:a 0 "%outputFolder%\%%~na.mp3"
 )
 
